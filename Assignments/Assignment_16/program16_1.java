@@ -1,7 +1,7 @@
 
 class Logic
 {
-    void calculateSum(int iNo)
+    public void calculateSum(int iNo)
     {
         int iSum = 0;
         int iCnt = 0;
