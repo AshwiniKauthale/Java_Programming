@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void printDivisibleBy2and3(int iNo) {
+    public void printDivisibleBy2and3(int iNo) {
         int iCnt = 0;
 
         for (iCnt = 1; iCnt <= iNo; iCnt++) {
