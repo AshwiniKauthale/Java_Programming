@@ -1,7 +1,7 @@
 
 class Logic
 {
-    void sumOfDigits(int num)
+    public void sumOfDigits(int num)
     {
         int iDigit = 0;
         int iSum = 0;
