@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void checkDivisible(int iNo) {
+    public void checkDivisible(int iNo) {
 
         if (((iNo % 5) == 0) && ((iNo % 11) == 0)) {
             System.out.println(iNo + " is divisible by both 5 & 11");
