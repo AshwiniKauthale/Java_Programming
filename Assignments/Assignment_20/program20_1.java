@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void sumEvenNumbers(int iNo) {
+    public void sumEvenNumbers(int iNo) {
 
         int iCnt = 0;
         int iSum = 0;
