@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void countEvenOddRange(int iNo) {
+    public void countEvenOddRange(int iNo) {
         int iCnt = 0;
         int iCntEven = 0;
         int iCntOdd = 0;
