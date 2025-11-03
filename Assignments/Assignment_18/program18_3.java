@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void printOddNumbers(int iNo) {
+    public void printOddNumbers(int iNo) {
         int iCnt = 0;
 
         for (iCnt = 1; iCnt <= iNo; iCnt++) {
