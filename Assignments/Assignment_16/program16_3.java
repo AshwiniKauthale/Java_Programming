@@ -1,7 +1,7 @@
 
 class Logic
 {
-    void findFactorial(int iNo)
+    public void findFactorial(int iNo)
     {
             int iCnt = 0;
 
