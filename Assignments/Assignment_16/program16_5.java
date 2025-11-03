@@ -3,7 +3,7 @@
 
 class Logic
 {
-    void countDigits(int num)
+    public void countDigits(int num)
     {
         int iCount = 0;
         int iDigit = 0;
