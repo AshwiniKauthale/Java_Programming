@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void checkSign(int iNo) {
+    public void checkSign(int iNo) {
         if (iNo == 0) {
             System.out.println(iNo + " is a zero");
         } else if (iNo < 0) {
