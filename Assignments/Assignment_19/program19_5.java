@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void calculatePower(int base, int exp) {
+    public void calculatePower(int base, int exp) {
         int result = 1;
         int iCnt = 0;
 
