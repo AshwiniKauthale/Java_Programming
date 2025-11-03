@@ -1,7 +1,7 @@
 
 class Logic
 {
-    void findMin(int iNo1, int iNo2,int iNo3)
+    public void findMin(int iNo1, int iNo2,int iNo3)
     {
         if(iNo1 <= iNo2 && iNo1 <= iNo3)
         {
