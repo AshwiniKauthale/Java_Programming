@@ -1,7 +1,7 @@
 
 class Logic
 {
-    void checkPalindrome(int num)
+    public void checkPalindrome(int num)
     {
         int iRev = 0;
         int iTemp = num;
