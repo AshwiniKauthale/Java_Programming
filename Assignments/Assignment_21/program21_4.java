@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void countFactors(int iNo) {
+    public void countFactors(int iNo) {
         int iCnt = 0;
         int iCount = 0;
 
