@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void findSmallestDigit(int iNo) {
+    public void findSmallestDigit(int iNo) {
         int iDigit = 0;
         int iSmallest = 9;
 
