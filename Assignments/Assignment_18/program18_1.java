@@ -1,7 +1,7 @@
 
 class Logic
 {
-    void checkPrime(int iNo)
+    public void checkPrime(int iNo)
     {
         int iCnt = 0;
 
