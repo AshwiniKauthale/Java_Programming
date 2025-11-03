@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void sumEvenOddDigits(int iNo) {
+    public void sumEvenOddDigits(int iNo) {
 
         int iDigit = 0;
         int iSumOdd = 0;
