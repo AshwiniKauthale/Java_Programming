@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void printReverse(int iNo) {
+    public void printReverse(int iNo) {
 
         int iCnt = 0;
         int iSum = 0;
