@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void displayGrade(int iMarks) {
+    public void displayGrade(int iMarks) {
         if (iMarks >= 90) {
             System.out.println("Grade A");
         } else if (iMarks >= 80) {
