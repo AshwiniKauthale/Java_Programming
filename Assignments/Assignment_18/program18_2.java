@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void printEvenNumbers(int iNo) {
+    public void printEvenNumbers(int iNo) {
         int iCnt = 0;
 
         for (iCnt = 1; iCnt <= iNo; iCnt++) {
