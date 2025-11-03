@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void findLargestDigit(int iNo) {
+    public void findLargestDigit(int iNo) {
         int iDigit = 0;
         int iLargest = 0;
 
