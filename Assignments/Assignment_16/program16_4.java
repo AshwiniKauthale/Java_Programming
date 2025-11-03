@@ -1,7 +1,7 @@
 
 class Logic
 {
-    void reverseNumber(int num)
+    public void reverseNumber(int num)
     {
         int iDigit = 0;
 
