@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void checkLeapYear(int iYear) {
+    public void checkLeapYear(int iYear) {
         if ((iYear % 4) == 0) {
             System.out.println(iYear + " is a leap year.");
         } else {
