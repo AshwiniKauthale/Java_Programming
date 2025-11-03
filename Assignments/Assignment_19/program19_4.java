@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void printDigits(int iNo) {
+    public void printDigits(int iNo) {
 
         String s = Integer.toString(iNo);
 
