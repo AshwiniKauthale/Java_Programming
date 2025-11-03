@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void productOfDigits(int iNo) {
+    public void productOfDigits(int iNo) {
         int iDigit = 0;
         int iProduct = 0;
 
