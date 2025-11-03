@@ -1,7 +1,7 @@
 
 class Logic
 {
-    void printTable(int num)
+    public void printTable(int num)
     {
         int iCnt = 0;
 
