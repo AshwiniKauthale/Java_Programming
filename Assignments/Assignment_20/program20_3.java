@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void checkPerfect(int iNo) {
+    public void checkPerfect(int iNo) {
         int iCnt = 0;
         int iSum = 0;
 
