@@ -1,7 +1,7 @@
 
 class Logic {
 
-    void displayFactors(int iNo) {
+    public void displayFactors(int iNo) {
         int iCnt = 0;
 
         for (iCnt = 1; iCnt <= iNo / 2; iCnt++) {
