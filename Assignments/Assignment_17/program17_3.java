@@ -1,7 +1,7 @@
 
 class Logic
 {
-    void findMax(int iNo1, int iNo2)
+    public void findMax(int iNo1, int iNo2)
     {
         if(iNo1 > iNo2)
         {
