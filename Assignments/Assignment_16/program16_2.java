@@ -1,7 +1,7 @@
 
 class Logic
 {
-    void checkEvenOdd(int iNo)
+    public void checkEvenOdd(int iNo)
     {
             if((iNo % 2) == 0)
             {
