@@ -2,27 +2,20 @@ import java.util.*;
 
 class Logic
 {
-    public int Difference(int Arr[],int iSize)
+    public void Display(int Arr[],int iSize)
     {
-        int iCnt = 0,iEven = 0,iOdd = 0,iAns = 0;
+        int iCnt = 0;
 
         for(iCnt = 0; iCnt < iSize; iCnt++)
         {
-            if((Arr[iCnt] % 2) == 0)
+            if((Arr[iCnt] % 5) == 0)
             {
-                iEven = iEven + Arr[iCnt];
-            }
-            else
-            {
-                iOdd = iOdd + Arr[iCnt];
+                System.out.println(Arr[iCnt]);
             }
         }
-
-        iAns = iEven - iOdd;
-        return iAns;
     }
 }
-class program25_1
+class program25_2
 {
     public static void main(String A[])
     {
@@ -44,9 +37,7 @@ class program25_1
             Arr[iCnt] = sobj.nextInt();
         }
 
-        iRet = lobj.Difference(Arr,iLength);
-
-        System.out.println("Differenct between even and odd number is : "+ iRet);
+        lobj.Display(Arr,iLength);
 
         lobj = null;
         sobj = null;
