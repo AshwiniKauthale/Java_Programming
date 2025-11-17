@@ -1,35 +1,34 @@
-import java.util.*;
+import java.util.Scanner;
 
 class Logic
 {
-    public int CountEven(int Arr[], int iSize)
+    public int Frequency(int Arr[],int iSize)
     {
         int iCnt = 0, iCount = 0;
 
         for(iCnt = 0; iCnt < iSize; iCnt++)
         {
-            if((Arr[iCnt] % 2) == 0)
+            if(Arr[iCnt] == 11)
             {
                 iCount++;
             }
         }
         return iCount;
     }
-
 }
-class program22_1
+
+class program22_4
 {
     public static void main(String A[])
     {
-        int iCnt = 0, iRet = 0;
-
-        Logic lobj = new Logic();
+        int iCnt = 0,iLength = 0,iRet = 0;
 
         Scanner sobj = new Scanner(System.in);
 
+        Logic lobj = new Logic();
 
         System.out.println("Enter number of elements :");
-        int iLength = sobj.nextInt();
+        iLength = sobj.nextInt();
 
         int Arr[] = new int[iLength];
 
@@ -40,9 +39,8 @@ class program22_1
             Arr[iCnt] = sobj.nextInt();
         }
 
-        iRet = lobj.CountEven(Arr,iLength);
-
-        System.out.println("Total even numbers are : "+ iRet);
+        iRet = lobj.Frequency(Arr,iLength);
+        System.out.println("Total frequency is :"+iRet);
 
         lobj = null;
         sobj = null;
