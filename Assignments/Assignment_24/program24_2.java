@@ -2,22 +2,22 @@ import java.util.*;
 
 class Logic
 {
-    public int Maximum(int Arr[], int iSize)
+    public int Minimum(int Arr[], int iSize)
     {
-        int iCnt = 0, iMax = Arr[0];
+        int iCnt = 0, iMin = Arr[0];
 
         for(iCnt = 0; iCnt < iSize; iCnt++)
         {
-            if(Arr[iCnt] > iMax)
+            if(Arr[iCnt] < iMin)
             {
-                iMax = Arr[iCnt];
+                iMin = Arr[iCnt];
             }
         }
-        return iMax;
+        return iMin;
     }
 }
 
-class program24_1
+class program24_2
 {
     public static void main(String A[])
     {
@@ -39,9 +39,9 @@ class program24_1
             Arr[iCnt] = sobj.nextInt();
         }
 
-        iRet = lobj.Maximum(Arr,iLength);
+        iRet = lobj.Minimum(Arr,iLength);
 
-        System.out.println("Largest number is : "+ iRet);
+        System.out.println("Smallest number is : "+ iRet);
 
         lobj = null;
         sobj = null;

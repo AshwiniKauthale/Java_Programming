@@ -2,22 +2,24 @@ import java.util.*;
 
 class Logic
 {
-    public int Maximum(int Arr[], int iSize)
+    public void DigitsSum(int Arr[],int iSize)
     {
-        int iCnt = 0, iMax = Arr[0];
+        int iCnt = 0,iDigit = 0,iSum = 0;
 
         for(iCnt = 0; iCnt < iSize; iCnt++)
         {
-            if(Arr[iCnt] > iMax)
+            iSum = 0;
+            while(Arr[iCnt] != 0)
             {
-                iMax = Arr[iCnt];
+                iDigit = Arr[iCnt]%10;
+                iSum = iSum + iDigit;
+                Arr[iCnt] = Arr[iCnt]/10;
             }
+            System.out.println(iSum);
         }
-        return iMax;
     }
 }
-
-class program24_1
+class program24_5
 {
     public static void main(String A[])
     {
@@ -39,9 +41,7 @@ class program24_1
             Arr[iCnt] = sobj.nextInt();
         }
 
-        iRet = lobj.Maximum(Arr,iLength);
-
-        System.out.println("Largest number is : "+ iRet);
+        lobj.DigitsSum(Arr,iLength);
 
         lobj = null;
         sobj = null;

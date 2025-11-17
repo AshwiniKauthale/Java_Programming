@@ -2,22 +2,20 @@ import java.util.*;
 
 class Logic
 {
-    public int Maximum(int Arr[], int iSize)
+    public void Digits(int Arr[],int iSize)
     {
-        int iCnt = 0, iMax = Arr[0];
+        int iCnt = 0;
 
         for(iCnt = 0; iCnt < iSize; iCnt++)
         {
-            if(Arr[iCnt] > iMax)
+            if((Arr[iCnt] > 99 && Arr[iCnt] < 1000) ||( Arr[iCnt] < -99 && Arr[iCnt] > -1000))
             {
-                iMax = Arr[iCnt];
+                System.out.println(Arr[iCnt]);
             }
         }
-        return iMax;
     }
 }
-
-class program24_1
+class program24_4
 {
     public static void main(String A[])
     {
@@ -39,9 +37,7 @@ class program24_1
             Arr[iCnt] = sobj.nextInt();
         }
 
-        iRet = lobj.Maximum(Arr,iLength);
-
-        System.out.println("Largest number is : "+ iRet);
+        lobj.Digits(Arr,iLength);
 
         lobj = null;
         sobj = null;
