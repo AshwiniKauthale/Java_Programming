@@ -5,24 +5,20 @@ class Pattern
     public void Display(int iRow,int iCol)
     {
         int i = 0, j = 0;
-        char ch = '\0';
 
-        for(i = 1; i <= iRow; i++)
+        for(i = iRow; i >= 1; i--)
         {
-            ch = 'A';
             for(j = 1; j <= iCol; j++)
             {
-                System.out.print(ch + "\t");
-                ch++;
+                System.out.print(i + "\t");
             }
-            
             System.out.println();
         }
         System.out.println();
     }
 }
 
-class program28_1
+class program28_4
 {
     public static void main(String A[])
     {

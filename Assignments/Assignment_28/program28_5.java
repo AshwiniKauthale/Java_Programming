@@ -4,25 +4,22 @@ class Pattern
 {
     public void Display(int iRow,int iCol)
     {
-        int i = 0, j = 0;
-        char ch = '\0';
+        int i = 0, j = 0,iCnt = 1;
 
         for(i = 1; i <= iRow; i++)
         {
-            ch = 'A';
             for(j = 1; j <= iCol; j++)
             {
-                System.out.print(ch + "\t");
-                ch++;
+                System.out.print(iCnt + "\t");
+                iCnt++;
             }
-            
             System.out.println();
         }
         System.out.println();
     }
 }
 
-class program28_1
+class program28_5
 {
     public static void main(String A[])
     {
