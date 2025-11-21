@@ -8,9 +8,9 @@ class Pattern
 
         for(i = 1; i <= iRow; i++)
         {
-            for(j = 1; j <= iCol; j++)
+            for(j = iCol; j >= 1; j--)
             {
-                System.out.print("*\t");
+                System.out.print(j+"\t");
             }
             System.out.println();
         }
@@ -18,7 +18,7 @@ class Pattern
     }
 }
 
-class program27_1
+class program27_3
 {
     public static void main(String A[])
     {

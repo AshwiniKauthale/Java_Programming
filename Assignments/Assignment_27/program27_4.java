@@ -10,7 +10,14 @@ class Pattern
         {
             for(j = 1; j <= iCol; j++)
             {
-                System.out.print("*\t");
+                if((j % 2) == 0)
+                {
+                    System.out.print("#\t");
+                }
+                else
+                {
+                    System.out.print("*\t");
+                }
             }
             System.out.println();
         }
@@ -18,7 +25,7 @@ class Pattern
     }
 }
 
-class program27_1
+class program27_4
 {
     public static void main(String A[])
     {

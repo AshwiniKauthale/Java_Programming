@@ -10,7 +10,7 @@ class Pattern
         {
             for(j = 1; j <= iCol; j++)
             {
-                System.out.print("*\t");
+                System.out.print(i + "\t");
             }
             System.out.println();
         }
@@ -18,7 +18,7 @@ class Pattern
     }
 }
 
-class program27_1
+class program27_5
 {
     public static void main(String A[])
     {
