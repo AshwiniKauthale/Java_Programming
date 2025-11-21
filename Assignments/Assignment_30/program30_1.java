@@ -5,6 +5,13 @@ class Pattern
     public void Display(int iRow,int iCol)
     {
         int i = 0, j = 0;
+        if(iRow != iCol)
+        {
+            System.out.println("Invalid input");
+            System.out.println("Row number and column numder should be same");
+
+            return;
+        }
         for(i = 1; i <= iRow; i++)
         {
             for(j = 1; j <= iCol; j++)
