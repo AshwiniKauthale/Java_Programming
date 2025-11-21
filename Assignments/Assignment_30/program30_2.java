@@ -9,7 +9,7 @@ class Pattern
         {
             for(j = 1; j <= iCol; j++)
             {
-                if(j <= i)
+                if(j <= iCol -i+1)
                 {
                     System.out.print("* \t");
                 }
@@ -24,7 +24,7 @@ class Pattern
     }
 }
 
-class program30_1
+class program30_2
 {
     public static void main(String A[])
     {
