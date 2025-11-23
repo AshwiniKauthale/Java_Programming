@@ -51,14 +51,16 @@ class program27_2
 {
     public static void main(String A[])
     {
-        int iValue  = 0;
+        int iValue1  = 0, iValue2 = 0;
         Scanner sobj = new Scanner(System.in);
 
-        System.out.println("Enter the Frequency :");
-        iValue = sobj.nextInt();
+        System.out.println("Enter the number of rows :");
+        iValue1 = sobj.nextInt();
+        System.out.println("Enter the number of columns :");
+        iValue2 = sobj.nextInt();
 
         Pattern pobj = new Pattern();
-        pobj.Display(iValue);
+        pobj.Display(iValue1,iValue2);
     }
 }
 
