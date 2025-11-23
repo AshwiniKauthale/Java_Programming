@@ -37,7 +37,7 @@ class Pattern
         }
         for(i = 1; i <= iRow; i++)
         {
-            for(j = 0; j <= iCol; j++)
+            for(j = 1; j <= iCol; j++)
             {
                 if(j == i || i == 1 || j == 1 || i == iRow || j == iCol )
                 {
