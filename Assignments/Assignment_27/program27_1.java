@@ -1,7 +1,30 @@
+///////////////////////////////////////////////////////////////////
+//
+//  Required Packages
+//
+////////////////////////////////////////////////////////////////////
+
 import java.util.*;
+
+///////////////////////////////////////////////////////////////////
+//
+//  Class Name : Pattern
+//
+////////////////////////////////////////////////////////////////////
 
 class Pattern
 {
+////////////////////////////////////////////////////////////////////
+//
+//  Function Name : Diaplay
+//  Description :   It is used to display pattern
+//  Input :         Integer,Integer
+//  Output :        Displays  pattern on screen
+//  Author :        Ashwini Vishnu Kauthale
+//  Date :          20/11/2025
+//
+////////////////////////////////////////////////////////////////////
+
     public void Display(int iRow,int iCol)
     {
         int i = 0, j = 0;
@@ -18,19 +41,34 @@ class Pattern
     }
 }
 
-class program27_1
+///////////////////////////////////////////////////////////////////
+//
+//  Entry Point Function for Java Application
+//
+///////////////////////////////////////////////////////////////////
+
+class program26_2
 {
     public static void main(String A[])
     {
-        int iValue1  = 0, iValue2 = 0;
+        int iValue  = 0;
         Scanner sobj = new Scanner(System.in);
 
-        System.out.println("Enter the number of rows :");
-        iValue1 = sobj.nextInt();
-        System.out.println("Enter the number of columns :");
-        iValue2 = sobj.nextInt();
+        System.out.println("Enter the Frequency :");
+        iValue = sobj.nextInt();
 
         Pattern pobj = new Pattern();
-        pobj.Display(iValue1,iValue2);
+        pobj.Display(iValue);
     }
 }
+
+////////////////////////////////////////////////////////////////////
+//
+//  iRow = 4
+//  iCol = 3
+//  Output : 
+//           * * * 
+//           * * *
+//           * * *
+//           * * *
+////////////////////////////////////////////////////////////////////
