@@ -41,15 +41,15 @@ class Pattern
             {
                 if(j == iCol - i + 1 || i == 1 || j == 1 || i == iRow || j == iCol )
                 {
-                    System.out.print("#\t");
+                    System.out.print("*\t");
                 }
                 else if(j <= iCol - i)
                 {
-                    System.out.print("*\t");
+                    System.out.print("#\t");
                 }
                 else
                 {
-                    System.out.print("@\t");
+                    System.out.print("$\t");
                 }
             }
             System.out.println();
