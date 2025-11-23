@@ -19,7 +19,7 @@ class Pattern
 //  Function Name : Diaplay
 //  Description :   It is used to display pattern
 //  Input :         Integer
-//  Output :        Displays alphabetical pattern on screen
+//  Output :        Displays  pattern on screen
 //  Author :        Ashwini Vishnu Kauthale
 //  Date :          20/11/2025
 //
