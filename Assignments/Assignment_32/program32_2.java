@@ -16,15 +16,18 @@ class Pattern
         {
             for(j = 1; j <= iCol; j++)
             {
-                if(j == iCol - i + 1)
+                if(j <= iCol - i)
+                {
+                    System.out.print("*\t");
+                }
+                else if(j == iCol - i + 1)
                 {
                     System.out.print("#\t");
                 }
                 else
                 {
-                    System.out.print("*\t");
+                    System.out.print("@\t");
                 }
-                
             }
             System.out.println();
         }
@@ -32,7 +35,7 @@ class Pattern
     }
 }
 
-class program32_1
+class program32_2
 {
     public static void main(String A[])
     {

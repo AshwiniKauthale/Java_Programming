@@ -16,13 +16,13 @@ class Pattern
         {
             for(j = 1; j <= iCol; j++)
             {
-                if(j == iCol - i + 1)
+                if(j == i || i == 1 || j == 1 || i == iRow || j == iCol )
                 {
-                    System.out.print("#\t");
+                    System.out.print(j+"\t");
                 }
                 else
                 {
-                    System.out.print("*\t");
+                    System.out.print(" \t");
                 }
                 
             }
@@ -32,7 +32,7 @@ class Pattern
     }
 }
 
-class program32_1
+class program32_5
 {
     public static void main(String A[])
     {
