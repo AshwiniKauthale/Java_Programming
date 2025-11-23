@@ -43,7 +43,7 @@ class Pattern
 //
 ///////////////////////////////////////////////////////////////////
 
-class program26_2
+class program26_4
 {
     public static void main(String A[])
     {
