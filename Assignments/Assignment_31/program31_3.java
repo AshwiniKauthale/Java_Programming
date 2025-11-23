@@ -14,9 +14,20 @@ class Pattern
         }
         for(i = 1; i <= iRow; i++)
         {
-            for(j = 1; j <= i; j++)
+            for(j = 1; j <= iCol; j++)
             {
-                System.out.print("*\t");
+                if(i == j)
+                {
+                    System.out.print("$\t");
+                }
+                else if(i > j)
+                {
+                    System.out.print("#\t");
+                }
+                else
+                {
+                    System.out.print("*\t");
+                }
             }
             System.out.println();
         }
@@ -24,7 +35,7 @@ class Pattern
     }
 }
 
-class program31_1
+class program31_3
 {
     public static void main(String A[])
     {
