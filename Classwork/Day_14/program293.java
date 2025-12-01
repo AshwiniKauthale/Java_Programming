@@ -1,6 +1,6 @@
 import java.util.*;
 
-class program292
+class program293
 {
     public static void main(String A[])
     {
@@ -11,5 +11,15 @@ class program292
         {
             System.out.println(no);
         }
+
+        Arrays.sort(Arr);
+
+        System.out.println("Array after sorting : ");
+        
+        for(int no : Arr)
+        {
+            System.out.println(no);
+        }
+
     }
 }
