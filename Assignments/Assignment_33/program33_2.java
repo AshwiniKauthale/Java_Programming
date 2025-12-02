@@ -16,8 +16,8 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : ChkAlpha
-//  Description   : check it is alphabet or not
+//  Function Name : ChkCapital
+//  Description   : check it is capital or not
 //  Input :         Character
 //  Output :        boolean
 //  Author :        Ashwini Vishnu Kauthale
@@ -25,9 +25,9 @@ class Strings
 //
 ////////////////////////////////////////////////////////////////////
 
-    public boolean ChkAlpha(char ch)
+    public boolean ChkCapital(char ch)
     {
-        if((ch >= 'a' && ch <= 'z') ||(ch >= 'A' && ch <= 'Z') )
+        if((ch >= 'A' && ch <= 'Z') )
         {
             return true;
         }
@@ -44,7 +44,7 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program33_1
+class program33_2
 {
     public static void main(String A[])
     {
@@ -58,15 +58,15 @@ class program33_1
 
         Strings strobj = new Strings();
 
-        bRet = strobj.ChkAlpha(cValue);
+        bRet = strobj.ChkCapital(cValue);
 
         if(bRet == true)
         {
-            System.out.println("It is alphabet");
+            System.out.println("It is Capital character");
         }
         else
         {
-            System.out.println("It is not alphabet");
+            System.out.println("It is not Capital character");
         }
 
         strobj = null;
@@ -83,6 +83,6 @@ class program33_1
 //           Input            Output
 //
 //             M                true
-//             &               false
+//             s               false
 // 
 ////////////////////////////////////////////////////////////////////

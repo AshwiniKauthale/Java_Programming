@@ -16,25 +16,38 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : ChkAlpha
-//  Description   : check it is alphabet or not
+//  Function Name : DisplaySchedule
+//  Description   : based on input display exam schedule
 //  Input :         Character
-//  Output :        boolean
+//  Output :
 //  Author :        Ashwini Vishnu Kauthale
-//  Date :          29/11/2025
+//  Date :          30/11/2025
 //
 ////////////////////////////////////////////////////////////////////
 
-    public boolean ChkAlpha(char ch)
+    public void DisplaySchedule(char ch)
     {
-        if((ch >= 'a' && ch <= 'z') ||(ch >= 'A' && ch <= 'Z') )
+        if((ch == 'a' || ch == 'A') )
         {
-            return true;
+            System.out.println("Your exam at 7 AM");
+        }
+        else if((ch == 'b' || ch == 'B') )
+        {
+            System.out.println("Your exam at 8.30 AM");
+        }
+        else if((ch == 'c' || ch == 'C') )
+        {
+            System.out.println("Your exam at 9.20 AM");
+        }
+        else if((ch == 'd' || ch == 'D') )
+        {
+            System.out.println("Your exam at 10.30 AM");
         }
         else
         {
-            return false;
+            System.out.println("Enter correct input");
         }
+        
     }
 }
 
@@ -44,12 +57,11 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program33_1
+class program33_5
 {
     public static void main(String A[])
     {
         char cValue = '\0';
-        boolean bRet = false;
 
         Scanner scanobj = new Scanner(System.in);
 
@@ -58,16 +70,7 @@ class program33_1
 
         Strings strobj = new Strings();
 
-        bRet = strobj.ChkAlpha(cValue);
-
-        if(bRet == true)
-        {
-            System.out.println("It is alphabet");
-        }
-        else
-        {
-            System.out.println("It is not alphabet");
-        }
+        strobj.DisplaySchedule(cValue);
 
         strobj = null;
         scanobj = null;
@@ -82,7 +85,7 @@ class program33_1
 //
 //           Input            Output
 //
-//             M                true
-//             &               false
+//             a               Your exam at 7 AM
+//             d               Your exam at 10.30 AM
 // 
 ////////////////////////////////////////////////////////////////////
