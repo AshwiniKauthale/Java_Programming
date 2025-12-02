@@ -4,6 +4,7 @@
 //
 ////////////////////////////////////////////////////////////////////
 
+import java.util.*;
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -16,7 +17,7 @@ class Strings
 ////////////////////////////////////////////////////////////////////
 //
 //  Function Name : Display
-//  Description   : display ASCII value in symbol,decimal, Octal, Hexadecimal
+//  Description   : based on input display input to Zmif it is character is Capital and dispkay character to a if it is small otherwise display as it is
 //  Input :         Character
 //  Output :
 //  Author :        Ashwini Vishnu Kauthale
@@ -24,24 +25,28 @@ class Strings
 //
 ////////////////////////////////////////////////////////////////////
 
-    public void DisplayASCII()
+    public void Display(char ch)
     {
         int iCnt = 0;
-        char symbol = '\0';
-
-        for(iCnt = 0; iCnt <= 256; iCnt++)
+        if((ch >= 'a' && ch <= 'z') )
         {
-            if(iCnt < 32 || iCnt == 127)
+            for(iCnt = ch; ch >= 'a'; ch--)
             {
-                System.out.printf(" ");
+                System.out.println(ch);
             }
-            else
-            {
-                System.out.printf("Character : %c   ",iCnt);
-            }
-
-            System.out.printf("Decimal : %d   Octal : %o   Hexadecimal : 0X%X  \n",(int)iCnt,(int)iCnt,(int)iCnt);
         }
+        else if((ch >= 'A' && ch <= 'Z') )
+        {
+            for(iCnt = ch; ch <= 'Z'; ch++)
+            {
+                System.out.println(ch);
+            }
+        }
+        else
+        {
+            return;
+        }
+        
     }
 }
 
@@ -51,19 +56,26 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program34_1
+class program34_3
 {
     public static void main(String A[])
     {
+        char cValue = '\0';
+
+        Scanner scanobj = new Scanner(System.in);
+
+        System.out.println("Enter character : ");
+        cValue = scanobj.next().charAt(0);
+
         Strings strobj = new Strings();
 
-        strobj.DisplayASCII();
+        strobj.Display(cValue);
 
         strobj = null;
+        scanobj = null;
 
         System.gc();
     }
-
 }
 
 
@@ -72,6 +84,7 @@ class program34_1
 //
 //           Input            Output
 //
-//             QA              Decimal : 65          Octal  :  0101   Hexxadecimal  : 0X41
+//             Q               Q R S T U V W X Y Z
+//             f               f e d c b a
 //
 ////////////////////////////////////////////////////////////////////

@@ -4,6 +4,7 @@
 //
 ////////////////////////////////////////////////////////////////////
 
+import java.util.*;
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -15,33 +16,26 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : Display
-//  Description   : display ASCII value in symbol,decimal, Octal, Hexadecimal
+//  Function Name : ChkSpecial
+//  Description   : check special character
 //  Input :         Character
-//  Output :
+//  Output :        boolean
 //  Author :        Ashwini Vishnu Kauthale
 //  Date :          30/11/2025
 //
 ////////////////////////////////////////////////////////////////////
 
-    public void DisplayASCII()
+    public boolean ChkSpecial(char ch)
     {
-        int iCnt = 0;
-        char symbol = '\0';
-
-        for(iCnt = 0; iCnt <= 256; iCnt++)
+        if((ch == '!')||(ch == '@')||(ch == '#')||(ch == '$')||(ch == '%')||(ch == '^')||(ch == '&')||(ch == '*'))
         {
-            if(iCnt < 32 || iCnt == 127)
-            {
-                System.out.printf(" ");
-            }
-            else
-            {
-                System.out.printf("Character : %c   ",iCnt);
-            }
-
-            System.out.printf("Decimal : %d   Octal : %o   Hexadecimal : 0X%X  \n",(int)iCnt,(int)iCnt,(int)iCnt);
+            return true;
         }
+        else
+        {
+            return false;
+        }
+        
     }
 }
 
@@ -51,19 +45,34 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program34_1
+class program34_4
 {
     public static void main(String A[])
     {
+        char cValue = '\0';
+        boolean bRet = false;
+        Scanner scanobj = new Scanner(System.in);
+
+        System.out.println("Enter character : ");
+        cValue = scanobj.next().charAt(0);
+
         Strings strobj = new Strings();
 
-        strobj.DisplayASCII();
+        bRet = strobj.ChkSpecial(cValue);
+        if(bRet == true)
+        {
+            System.out.println("It is a special character");
+        }
+        else
+        {
+            System.out.println("It is not a special character");
+        }
 
         strobj = null;
+        scanobj = null;
 
         System.gc();
     }
-
 }
 
 
@@ -72,6 +81,7 @@ class program34_1
 //
 //           Input            Output
 //
-//             QA              Decimal : 65          Octal  :  0101   Hexxadecimal  : 0X41
+//             Q               FALSE
+//             %               TRUE
 //
 ////////////////////////////////////////////////////////////////////

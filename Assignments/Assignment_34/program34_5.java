@@ -4,6 +4,7 @@
 //
 ////////////////////////////////////////////////////////////////////
 
+import java.util.*;
 
 ///////////////////////////////////////////////////////////////////
 //
@@ -16,32 +17,19 @@ class Strings
 ////////////////////////////////////////////////////////////////////
 //
 //  Function Name : Display
-//  Description   : display ASCII value in symbol,decimal, Octal, Hexadecimal
+//  Description   : display ASCII value in decimal, Octal, Hexadecimal
 //  Input :         Character
-//  Output :
+//  Output :        boolean
 //  Author :        Ashwini Vishnu Kauthale
 //  Date :          30/11/2025
 //
 ////////////////////////////////////////////////////////////////////
 
-    public void DisplayASCII()
+    public void Display(char ch)
     {
-        int iCnt = 0;
-        char symbol = '\0';
-
-        for(iCnt = 0; iCnt <= 256; iCnt++)
-        {
-            if(iCnt < 32 || iCnt == 127)
-            {
-                System.out.printf(" ");
-            }
-            else
-            {
-                System.out.printf("Character : %c   ",iCnt);
-            }
-
-            System.out.printf("Decimal : %d   Octal : %o   Hexadecimal : 0X%X  \n",(int)iCnt,(int)iCnt,(int)iCnt);
-        }
+        System.out.printf("Decimal : %d \n",(int)ch);
+        System.out.printf("Octal : %o \n", (int)ch);
+        System.out.printf("Hexadecimal : 0X%X \n",(int) ch);
     }
 }
 
@@ -51,19 +39,25 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program34_1
+class program34_5
 {
     public static void main(String A[])
     {
+        char cValue = '\0';
+        Scanner scanobj = new Scanner(System.in);
+
+        System.out.println("Enter character : ");
+        cValue = scanobj.next().charAt(0);
+
         Strings strobj = new Strings();
 
-        strobj.DisplayASCII();
+        strobj.Display(cValue);
 
         strobj = null;
+        scanobj = null;
 
         System.gc();
     }
-
 }
 
 
