@@ -16,8 +16,8 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CountCapital
-//  Description   : Display count of capital
+//  Function Name : Difference
+//  Description   : Display count of difference between small and capital character
 //  Input :         Character
 //  Output :        Integer
 //  Author :        Ashwini Vishnu Kauthale
@@ -25,20 +25,25 @@ class Strings
 //
 ////////////////////////////////////////////////////////////////////
 
-    public int CountCapital(String str)
+    public int Difference(String str)
     {
-        int iCnt = 0,iCount = 0;
+        int iCnt = 0,iCountSmall = 0,iCountCapital = 0,iAns = 0;
 
         char Arr[] = str.toCharArray();
         
         for(iCnt = 0; iCnt < Arr.length;iCnt++)
         {
-            if(Arr[iCnt] >= 'A' && Arr[iCnt] <= 'Z')
+            if(Arr[iCnt] >= 'a' && Arr[iCnt] <= 'z')
             {
-                iCount++;
+                iCountSmall++;
+            }
+            else if(Arr[iCnt] >= 'A' && Arr[iCnt] <= 'Z')
+            {
+                iCountCapital++;
             }
         }
-        return iCount++;
+        iAns = iCountSmall - iCountCapital;
+        return iAns;
     }
 }
 
@@ -48,7 +53,7 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program35_1
+class program35_3
 {
     public static void main(String A[])
     {
@@ -61,7 +66,7 @@ class program35_1
 
         Strings strobj = new Strings();
 
-        iRet = strobj.CountCapital(sobj);
+        iRet = strobj.Difference(sobj);
 
         System.out.println("Count is :"+ iRet);
 
@@ -79,6 +84,6 @@ class program35_1
 //
 //           Input            Output
 //
-//          MarVEllOus          4
+//          MarVEllOus          2(4-6)
 //
 ////////////////////////////////////////////////////////////////////

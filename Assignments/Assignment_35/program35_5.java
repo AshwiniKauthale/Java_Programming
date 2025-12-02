@@ -16,30 +16,27 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CountCapital
-//  Description   : Display count of capital
+//  Function Name : Reverse
+//  Description   : accept string and display it in reverse order
 //  Input :         Character
-//  Output :        Integer
+//  Output :
 //  Author :        Ashwini Vishnu Kauthale
 //  Date :          30/11/2025
 //
 ////////////////////////////////////////////////////////////////////
 
-    public int CountCapital(String str)
+    public void Reverse(String str)
     {
-        int iCnt = 0,iCount = 0;
+        int iCnt = 0,iCountSmall = 0;
 
         char Arr[] = str.toCharArray();
         
-        for(iCnt = 0; iCnt < Arr.length;iCnt++)
+        for(iCnt = Arr.length - 1; iCnt >= 0;iCnt--)
         {
-            if(Arr[iCnt] >= 'A' && Arr[iCnt] <= 'Z')
-            {
-                iCount++;
-            }
+            System.out.print(Arr[iCnt]);
         }
-        return iCount++;
     }
+
 }
 
 ///////////////////////////////////////////////////////////////////
@@ -48,12 +45,10 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program35_1
+class program35_5
 {
     public static void main(String A[])
     {
-        int iRet = 0;
-
         Scanner scanobj = new Scanner(System.in);
 
         System.out.println("Enter String :");
@@ -61,15 +56,14 @@ class program35_1
 
         Strings strobj = new Strings();
 
-        iRet = strobj.CountCapital(sobj);
-
-        System.out.println("Count is :"+ iRet);
+        strobj.Reverse(sobj);
 
         strobj = null;
         sobj = null;
         scanobj = null;
 
         System.gc();
+
     }
 }
 
@@ -79,6 +73,6 @@ class program35_1
 //
 //           Input            Output
 //
-//          MarVEllOus          4
+//         marvellous         soullevram
 //
 ////////////////////////////////////////////////////////////////////

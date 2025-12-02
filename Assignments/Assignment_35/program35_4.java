@@ -16,30 +16,31 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CountCapital
-//  Description   : Display count of capital
+//  Function Name : ChkVowel
+//  Description   : check Vowel is present or not
 //  Input :         Character
-//  Output :        Integer
+//  Output :        boolean
 //  Author :        Ashwini Vishnu Kauthale
 //  Date :          30/11/2025
 //
 ////////////////////////////////////////////////////////////////////
 
-    public int CountCapital(String str)
+    public boolean ChkVowel(String str)
     {
-        int iCnt = 0,iCount = 0;
+        int iCnt = 0,iCountSmall = 0;
 
         char Arr[] = str.toCharArray();
         
         for(iCnt = 0; iCnt < Arr.length;iCnt++)
         {
-            if(Arr[iCnt] >= 'A' && Arr[iCnt] <= 'Z')
+            if((Arr[iCnt] == 'a')||(Arr[iCnt] == 'e')||(Arr[iCnt] == 'i')||(Arr[iCnt] == 'o')||(Arr[iCnt] == 'u')||(Arr[iCnt] == 'A')||(Arr[iCnt] == 'E')||(Arr[iCnt] == 'I')||(Arr[iCnt] == 'O')||(Arr[iCnt] == 'U'))
             {
-                iCount++;
+                return true;
             }
         }
-        return iCount++;
+        return false;
     }
+
 }
 
 ///////////////////////////////////////////////////////////////////
@@ -48,12 +49,11 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program35_1
+class program35_4
 {
     public static void main(String A[])
     {
-        int iRet = 0;
-
+        boolean bRet = false;
         Scanner scanobj = new Scanner(System.in);
 
         System.out.println("Enter String :");
@@ -61,9 +61,15 @@ class program35_1
 
         Strings strobj = new Strings();
 
-        iRet = strobj.CountCapital(sobj);
-
-        System.out.println("Count is :"+ iRet);
+        bRet = strobj.ChkVowel(sobj);
+        if(bRet == true)
+        {
+            System.out.println("It contain vowel");
+        }
+        else
+        {
+            System.out.println("It not contain vowel");
+        }
 
         strobj = null;
         sobj = null;
@@ -79,6 +85,7 @@ class program35_1
 //
 //           Input            Output
 //
-//          MarVEllOus          4
+//         marvellous         true
+//           xyz             false
 //
 ////////////////////////////////////////////////////////////////////
