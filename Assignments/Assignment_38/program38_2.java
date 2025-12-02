@@ -16,8 +16,8 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : ReverseCopy
-//  Description :   copy character string in another string in reverse order
+//  Function Name : CopyX
+//  Description :   copy character string in another string by removing white spaces
 //  Input :         String
 //  Output :        
 //  Author :        Ashwini Vishnu Kauthale
@@ -25,16 +25,19 @@ class Strings
 //
 ////////////////////////////////////////////////////////////////////
 
-    public void ReverseCopy(String str)
+    public void CopyX(String str)
     {
         int iCnt = 0;
 
         char Arr[] = str.toCharArray();
 
         String dest ="";
-        for(iCnt = Arr.length - 1; iCnt >= 0; iCnt--)
+        for(iCnt = 0; iCnt < Arr.length; iCnt++)
         {
-            dest = dest + Arr[iCnt];
+            if(Arr[iCnt] != ' ')
+            {
+                dest = dest + Arr[iCnt];
+            } 
         }
 
         System.out.println("Updated string is "+dest);
@@ -48,22 +51,22 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program38_1
+class program38_2
 {
     public static void main(String A[])
     {
         Scanner scanobj = new Scanner(System.in);
 
         System.out.println("Enter String :");
-        String sobj = scanobj.nextLine();
+        String sobj1 = scanobj.nextLine();
 
 
         Strings strobj = new Strings();
 
-        strobj.ReverseCopy(sobj);
+        strobj.CopyX(sobj1);
 
         strobj = null;
-        sobj = null;
+        sobj1 = null;
         scanobj = null;
 
         System.gc();
@@ -75,6 +78,6 @@ class program38_1
 //
 //           Input             Output
 //
-//        MARVELLOUS        SUOLLEVRAM
+//        MAR  VELL  OUS        SUOLLEVRAM
 //
 ////////////////////////////////////////////////////////////////////
