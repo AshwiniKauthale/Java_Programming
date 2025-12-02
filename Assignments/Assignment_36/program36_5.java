@@ -16,29 +16,30 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : toLowerX
-//  Description :   converting string into lowercase
+//  Function Name : CountWhoteSpaces
+//  Description :   count number of white spaces from string
 //  Input :         String
-//  Output :        String
+//  Output :        int
 //  Author :        Ashwini Vishnu Kauthale
 //  Date :          29/11/2025
 //
 ////////////////////////////////////////////////////////////////////
 
-    public String toLowerX(String str)
+    public int CountWhiteSpaces(String str)
     {
-        int iCnt = 0;
+        int iCnt = 0,iCount = 0;
 
         char Arr[] = str.toCharArray();
 
         for(iCnt = 0; iCnt < Arr.length; iCnt++)
         {
-            if(Arr[iCnt] >= 'A' && Arr[iCnt] <= 'Z')
+            if(Arr[iCnt] == ' ')
             {
-                Arr[iCnt] = (char)(Arr[iCnt] + 32);
+                iCount++;
             }
         }
-        return new String(Arr);
+        return iCount;
+
     }
 }
 
@@ -48,11 +49,11 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program36_1
+class program36_5
 {
     public static void main(String A[])
     {
-        String sRet = null;
+        int iRet = 0;
         Scanner scanobj = new Scanner(System.in);
 
         System.out.println("Enter String :");
@@ -60,9 +61,9 @@ class program36_1
 
         Strings strobj = new Strings();
 
-        sRet = strobj.toLowerX(sobj);
+        iRet = strobj.CountWhiteSpaces(sobj);
 
-        System.out.println("Updated string : "+sRet);
+        System.out.println("White spaces are :"+ iRet);
 
         strobj = null;
         sobj = null;
@@ -72,13 +73,13 @@ class program36_1
     }
 }
 
+
 ////////////////////////////////////////////////////////////////////
 //
 //
-//        Accept string from user and convert it into lowercase
 //
-//           Input                          Output
+//           Input                Output
 //
-//       Marvellous Multi OS        marvellous multi os
+//       Marv e6729llo us56 4        3
 //
 ////////////////////////////////////////////////////////////////////

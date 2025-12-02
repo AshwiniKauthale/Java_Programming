@@ -16,16 +16,16 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : toLowerX
-//  Description :   converting string into lowercase
+//  Function Name : DisplayDidit
+//  Description :   seperate digit from string
 //  Input :         String
-//  Output :        String
+//  Output :
 //  Author :        Ashwini Vishnu Kauthale
 //  Date :          29/11/2025
 //
 ////////////////////////////////////////////////////////////////////
 
-    public String toLowerX(String str)
+    public void DisplayDigit(String str)
     {
         int iCnt = 0;
 
@@ -33,12 +33,11 @@ class Strings
 
         for(iCnt = 0; iCnt < Arr.length; iCnt++)
         {
-            if(Arr[iCnt] >= 'A' && Arr[iCnt] <= 'Z')
+            if(Arr[iCnt] >= '0' && Arr[iCnt] <= '9')
             {
-                Arr[iCnt] = (char)(Arr[iCnt] + 32);
+                System.out.print(Arr[iCnt]);
             }
         }
-        return new String(Arr);
     }
 }
 
@@ -48,11 +47,10 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program36_1
+class program36_4
 {
     public static void main(String A[])
     {
-        String sRet = null;
         Scanner scanobj = new Scanner(System.in);
 
         System.out.println("Enter String :");
@@ -60,25 +58,25 @@ class program36_1
 
         Strings strobj = new Strings();
 
-        sRet = strobj.toLowerX(sobj);
-
-        System.out.println("Updated string : "+sRet);
+        strobj.DisplayDigit(sobj);
 
         strobj = null;
         sobj = null;
         scanobj = null;
 
         System.gc();
+
     }
 }
+
 
 ////////////////////////////////////////////////////////////////////
 //
 //
-//        Accept string from user and convert it into lowercase
+//        Accept string from user and Display only Digits
 //
-//           Input                          Output
+//           Input                Output
 //
-//       Marvellous Multi OS        marvellous multi os
+//       Marve6729llous564       6729564
 //
 ////////////////////////////////////////////////////////////////////

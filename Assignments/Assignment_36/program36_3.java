@@ -16,8 +16,8 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : toLowerX
-//  Description :   converting string into lowercase
+//  Function Name : ToggleX
+//  Description :   toggle the string
 //  Input :         String
 //  Output :        String
 //  Author :        Ashwini Vishnu Kauthale
@@ -25,7 +25,7 @@ class Strings
 //
 ////////////////////////////////////////////////////////////////////
 
-    public String toLowerX(String str)
+    public String ToggleX(String str)
     {
         int iCnt = 0;
 
@@ -33,7 +33,11 @@ class Strings
 
         for(iCnt = 0; iCnt < Arr.length; iCnt++)
         {
-            if(Arr[iCnt] >= 'A' && Arr[iCnt] <= 'Z')
+            if(Arr[iCnt] >= 'a' && Arr[iCnt] <= 'z')
+            {
+                Arr[iCnt] = (char)(Arr[iCnt] - 32);
+            }
+            else if(Arr[iCnt] >= 'A' && Arr[iCnt] <= 'Z')
             {
                 Arr[iCnt] = (char)(Arr[iCnt] + 32);
             }
@@ -48,7 +52,7 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program36_1
+class program36_3
 {
     public static void main(String A[])
     {
@@ -60,7 +64,7 @@ class program36_1
 
         Strings strobj = new Strings();
 
-        sRet = strobj.toLowerX(sobj);
+        sRet = strobj.ToggleX(sobj);
 
         System.out.println("Updated string : "+sRet);
 
@@ -72,13 +76,14 @@ class program36_1
     }
 }
 
+
 ////////////////////////////////////////////////////////////////////
 //
 //
-//        Accept string from user and convert it into lowercase
+//        Accept string from user and toggle it
 //
 //           Input                          Output
 //
-//       Marvellous Multi OS        marvellous multi os
+//       Marvellous is MULTI OS        mARVELLOUS IS multi os
 //
 ////////////////////////////////////////////////////////////////////
