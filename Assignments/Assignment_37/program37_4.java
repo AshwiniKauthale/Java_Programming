@@ -16,29 +16,29 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CheckChar
-//  Description :   check given character is present or not
+//  Function Name : LastOccr
+//  Description :   return last occurance of character
 //  Input :         String
-//  Output :        boolean
+//  Output :        int
 //  Author :        Ashwini Vishnu Kauthale
 //  Date :          29/11/2025
 //
 ////////////////////////////////////////////////////////////////////
 
-    public boolean CheckChar(String str, char ch)
+    public int LastOccr(String str, char ch)
     {
         int iCnt = 0;
 
         char Arr[] = str.toCharArray();
 
-        for(iCnt = 0; iCnt < Arr.length; iCnt++)
+        for(iCnt = Arr.length - 1; iCnt >= 0; iCnt--)
         {
             if(Arr[iCnt] == ch)
             {
-                return true;
+                return iCnt;
             }
         }
-        return false;
+        return -1;
 
     }
 }
@@ -49,11 +49,11 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program37_1
+class program37_4
 {
     public static void main(String A[])
     {
-        boolean bRet = false;
+        int iRet = 0;
         Scanner scanobj = new Scanner(System.in);
 
         System.out.println("Enter String :");
@@ -64,16 +64,8 @@ class program37_1
 
         Strings strobj = new Strings();
 
-        bRet = strobj.CheckChar(sobj,cValue);
-
-        if(bRet == true)
-        {
-            System.out.println("Character is present");
-        }
-        else
-        {
-            System.out.println("Character is not present");
-        }
+        iRet = strobj.LastOccr(sobj,cValue);
+        System.out.println("Last occurance is : "+ iRet);
 
         strobj = null;
         sobj = null;
@@ -86,9 +78,9 @@ class program37_1
 
 ////////////////////////////////////////////////////////////////////
 //
-//
+//   return last occurance of that character
 //           Input      check       Output
 //
-//        MARvellous      e        TRUE
+//        MARvellous      l         6
 //
 ////////////////////////////////////////////////////////////////////

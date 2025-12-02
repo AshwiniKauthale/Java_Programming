@@ -16,18 +16,18 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CheckChar
-//  Description :   check given character is present or not
+//  Function Name : CountkChar
+//  Description :   count given number character is present 
 //  Input :         String
-//  Output :        boolean
+//  Output :        int
 //  Author :        Ashwini Vishnu Kauthale
 //  Date :          29/11/2025
 //
 ////////////////////////////////////////////////////////////////////
 
-    public boolean CheckChar(String str, char ch)
+    public int CountChar(String str, char ch)
     {
-        int iCnt = 0;
+        int iCnt = 0,iCount = 0;
 
         char Arr[] = str.toCharArray();
 
@@ -35,10 +35,10 @@ class Strings
         {
             if(Arr[iCnt] == ch)
             {
-                return true;
+                iCount++;
             }
         }
-        return false;
+        return iCount;
 
     }
 }
@@ -49,11 +49,11 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program37_1
+class program37_2
 {
     public static void main(String A[])
     {
-        boolean bRet = false;
+        int iRet = 0;
         Scanner scanobj = new Scanner(System.in);
 
         System.out.println("Enter String :");
@@ -64,16 +64,8 @@ class program37_1
 
         Strings strobj = new Strings();
 
-        bRet = strobj.CheckChar(sobj,cValue);
-
-        if(bRet == true)
-        {
-            System.out.println("Character is present");
-        }
-        else
-        {
-            System.out.println("Character is not present");
-        }
+        iRet = strobj.CountChar(sobj,cValue);
+        System.out.println("Count is : "+ iRet);
 
         strobj = null;
         sobj = null;
@@ -86,9 +78,9 @@ class program37_1
 
 ////////////////////////////////////////////////////////////////////
 //
-//
+//   return frequency of that character
 //           Input      check       Output
 //
-//        MARvellous      e        TRUE
+//        MARvellous      l         2
 //
 ////////////////////////////////////////////////////////////////////

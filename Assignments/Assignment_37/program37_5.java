@@ -16,29 +16,25 @@ class Strings
 {
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CheckChar
-//  Description :   check given character is present or not
+//  Function Name : ReverseDisplay
+//  Description :   reverse the string in place
 //  Input :         String
-//  Output :        boolean
+//  Output :        
 //  Author :        Ashwini Vishnu Kauthale
-//  Date :          29/11/2025
+//  Date :          30/11/2025
 //
 ////////////////////////////////////////////////////////////////////
 
-    public boolean CheckChar(String str, char ch)
+    public void ReverseDisplay(String str)
     {
         int iCnt = 0;
 
         char Arr[] = str.toCharArray();
 
-        for(iCnt = 0; iCnt < Arr.length; iCnt++)
+        for(iCnt = Arr.length - 1; iCnt >= 0; iCnt--)
         {
-            if(Arr[iCnt] == ch)
-            {
-                return true;
-            }
+            System.out.print(Arr[iCnt]);
         }
-        return false;
 
     }
 }
@@ -49,31 +45,19 @@ class Strings
 //
 ///////////////////////////////////////////////////////////////////
 
-class program37_1
+class program37_5
 {
     public static void main(String A[])
     {
-        boolean bRet = false;
         Scanner scanobj = new Scanner(System.in);
 
         System.out.println("Enter String :");
         String sobj = scanobj.nextLine();
 
-        System.out.println("Enter character whih you want to check");
-        char cValue = scanobj.next().charAt(0);
 
         Strings strobj = new Strings();
 
-        bRet = strobj.CheckChar(sobj,cValue);
-
-        if(bRet == true)
-        {
-            System.out.println("Character is present");
-        }
-        else
-        {
-            System.out.println("Character is not present");
-        }
+        strobj.ReverseDisplay(sobj);
 
         strobj = null;
         sobj = null;
@@ -86,9 +70,8 @@ class program37_1
 
 ////////////////////////////////////////////////////////////////////
 //
+//           Input             Output
 //
-//           Input      check       Output
-//
-//        MARvellous      e        TRUE
+//        MARVELLOUS        SUOLLEVRAM
 //
 ////////////////////////////////////////////////////////////////////
