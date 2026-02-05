@@ -1,11 +1,12 @@
 import java.io.*;
 import java.util.*;
 
-class program60_1
+class program60_2
 {
     public static void main(String A[])
     {
-        int TotalSize = 0;
+        int MaxSize = 0;
+        String FileName = null;
 
         File fobj = null;
         Scanner sobj = new Scanner(System.in);
@@ -19,11 +20,17 @@ class program60_1
         {
             File[] Arr = fobj.listFiles();
 
+            MaxSize = (int)Arr[0].length(); 
+
             for(int i = 0; i < Arr.length; i++)
             {
-                TotalSize = TotalSize + (int)Arr[i].length();
+                if(Arr[i].length() >= MaxSize)
+                {
+                    MaxSize = (int)Arr[i].length();
+                    FileName = Arr[i].getName();
+                }
             }
-            System.out.println("Total size is  : "+TotalSize+" bytes");
+            System.out.println("File name : "+ FileName + "   File Size : "+ MaxSize);
             fobj = null;
         }
         else
