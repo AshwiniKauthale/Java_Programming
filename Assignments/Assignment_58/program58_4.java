@@ -1,0 +1,57 @@
+import java.io.*;
+import java.util.*;
+
+class program58_4
+{
+    public static void main(String A[]) throws Exception
+    {
+        int iRet = 0;
+        byte Buffer[] = new byte[1024];
+
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter the name of folder : ");
+        String FolderName = sobj.nextLine();
+
+        System.out.println("Enter the name of packed file : ");
+        String PackName = sobj.nextLine();
+
+        File fobj = new File(FolderName);
+
+        if((fobj.exists()) && (fobj.isDirectory()))
+        {
+            File PackObj = new File(PackName);
+
+            PackObj.createNewFile();
+
+            FileOutputStream foobj = new FileOutputStream(PackObj);
+
+            FileInputStream fiobj = null;
+
+            File fArr[] = fobj.listFiles();
+
+            for(int i = 0; i < fArr.length; i++)
+            {
+                fiobj = new FileInputStream(fArr[i]);
+
+                File[] Arr = fobj.listFiles();
+
+                while((iRet = fiobj.read(Buffer)) != -1)
+                {
+                    String str = Arr[i].getName();
+                    foobj.write(str.getBytes());
+                    foobj.write(Buffer,0,iRet);
+                }
+                fiobj.close();
+            }
+            System.out.println("Data copied succesfully");
+            foobj.close();
+        }
+        else
+        {
+            System.out.println("There is no such folder");
+        }
+
+        sobj.close();
+    }
+}
