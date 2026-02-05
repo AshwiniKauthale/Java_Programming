@@ -1,7 +1,8 @@
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
-class program63_1
+class program63_2
 {
     public static void main(String A[])
     {
@@ -22,11 +23,9 @@ class program63_1
         if(fobj1.exists())
         {
             File fobj2 = new File(Destfile);
-
+            long startTime = System.nanoTime();
             try
             {
-                fobj2.createNewFile();
-
                 FileInputStream fiobj = new FileInputStream(fobj1);
                 FileOutputStream foobj = new FileOutputStream(fobj2);
 
@@ -48,6 +47,17 @@ class program63_1
             {
                 System.out.println(eobj);
             }
+            long endTime = System.nanoTime();
+
+            long durationInNano = endTime - startTime;
+
+            long Millis = TimeUnit.NANOSECONDS.toMillis(durationInNano);
+            double Seconds = (double) durationInNano / 1_000_000_000.0;
+
+            System.out.println("Time taken to copy the file:");
+            System.out.println("Milliseconds: " + Millis + " ms");
+            System.out.println("Seconds: " + Seconds + " s");
+            
         }
         else
         {
