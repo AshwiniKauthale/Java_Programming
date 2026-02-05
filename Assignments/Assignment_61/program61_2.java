@@ -2,10 +2,12 @@
 import java.io.*;
 import java.util.*;
 
-class program61_1
+class program61_2
 {
-    public static void main(String A[]) throws Exception {
-        int bRead = 0;
+    public static void main(String A[]) throws Exception
+    {
+        int iRet = 0;
+        byte Buffer[] = new byte[1024];
         File fobjsrc = null;
         File fobjdest = null;
         String FileNameSrc = null;
@@ -30,9 +32,9 @@ class program61_1
             FileInputStream fiobj = new FileInputStream(fobjsrc);
             FileOutputStream foobj = new FileOutputStream(fobjdest);
 
-            while ((bRead = fiobj.read()) != -1) {
+            while ((iRet = fiobj.read(Buffer)) != -1) {
 
-                foobj.write(bRead);
+                foobj.write(Buffer,0,iRet);
             }
 
             System.out.println("File copy Succesfull");
