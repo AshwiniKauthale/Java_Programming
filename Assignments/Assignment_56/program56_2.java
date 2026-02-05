@@ -1,15 +1,16 @@
-
 import java.io.*;
 import java.util.*;
+import javax.imageio.stream.FileImageInputStream;
 
-class program56_1
+class program56_2
 {
     public static void main(String A[]) throws Exception
     {
+        int iRet = 0;
         String FileName = null;
         File fobj = null;
+        byte Buffer[] = new byte[100];
 
-        FileReader frobj = null;
 
         Scanner sobj = new Scanner(System.in);
 
@@ -20,19 +21,23 @@ class program56_1
 
         if(fobj.exists())
         {
-            frobj = new FileReader(FileName);
+            String str = null;
+            FileImageInputStream fiobj = new FileImageInputStream(fobj);
 
-            System.out.println((char)frobj.read());
+            while((iRet = fiobj.read(Buffer)) != -1)
+            {
+                str = new String(Buffer);
+                System.out.print(str);
+                str = null;
+            }
+
+            System.out.println();
         }
         else
         {
             System.out.println("There is no such file");
         }
 
-        if(frobj != null)
-        {
-            frobj.close();
-        }
         sobj.close();
     }
 }
