@@ -1,10 +1,13 @@
 import java.io.*;
 import java.util.*;
 
-class program59_1
+class program59_4
 {
     public static void main(String A[])
     {
+        int FCount = 0;
+        int DCount = 0;
+
         File fobj = null;
         Scanner sobj = new Scanner(System.in);
 
@@ -19,8 +22,16 @@ class program59_1
 
             for(int i = 0; i < Arr.length; i++)
             {
-                System.out.println(Arr[i].getName());
+                if(Arr[i].isDirectory())
+                {
+                    DCount++;
+                }
+                else
+                {
+                    FCount++;
+                }
             }
+            System.out.println("Files are : "+FCount + "\nDirectory are : "+DCount);
             fobj = null;
         }
         else

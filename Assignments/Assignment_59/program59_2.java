@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-class program59_1
+class program59_2
 {
     public static void main(String A[])
     {
@@ -19,7 +19,10 @@ class program59_1
 
             for(int i = 0; i < Arr.length; i++)
             {
-                System.out.println(Arr[i].getName());
+                if(Arr[i].isFile())
+                {
+                    System.out.println(Arr[i].getName());
+                }
             }
             fobj = null;
         }
