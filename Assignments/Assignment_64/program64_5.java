@@ -28,20 +28,20 @@ class BitMask
 
     public boolean ChkBit(long iNo)
     {
-        long iMask = 1, iResult = 0;
-        boolean bRet = false;
+        boolean bFlag = false;
+        long Mask = 1, Result = 0;
 
-        iMask = iMask << (15 - 1);
+        Mask = ((Mask << (32 - 1)) | (Mask << (1 - 1)));
 
-        iResult = iNo & iMask;
+        Result = iNo | Mask;
 
-        if (iResult == iMask) {
-            bRet = true;
+        if (Result == Mask) {
+            bFlag = true;
         } else {
-            bRet = false;
+            bFlag = false;
         }
 
-        return bRet;
+        return bFlag;
     }
 }
 
@@ -51,25 +51,28 @@ class BitMask
 //
 //////////////////////////////////////////////////////////////////
 
-class program64_1
+class program64_5
 {
+
     public static void main(String A[]) {
         long iValue = 0;
         boolean bRet = false;
+        Scanner sobj = new Scanner(System.in);
 
         BitMask bobj = new BitMask();
 
-        Scanner sobj = new Scanner(System.in);
-
-        System.out.println("Enter Number");
+        System.out.println("Enter number");
         iValue = sobj.nextLong();
 
         bRet = bobj.ChkBit(iValue);
 
-        if (bRet == true) {
-            System.out.println("15th Bit is ON");
-        } else {
-            System.out.println("15th Bit is OFF");
+        if (bRet == true)
+        {
+            System.out.println("First and Last Bit is ON");
+        }
+        else
+        {
+            System.out.println("First and Last Bit is OFF");
         }
     }
 }
