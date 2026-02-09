@@ -17,24 +17,21 @@ class BitMask
 
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : OffBit
-//  Description   : Used to Off th given bit
+//  Function Name : OnBit
+//  Description   : Used to Toggle the given bit
 //  Input :         long
 //  Output :        long
 //  Author :        Ashwini Vishnu Kauthale
 //  Date :          04/02/2025
 //
 ////////////////////////////////////////////////////////////////////
-
-    public long OffBit(long iNo)
+    public long OnBit(long iNo)
     {
         int iMask = 1;
 
-        iMask = (iMask << (7 - 1));
+        iMask = ((iMask << (4 - 1)) | (iMask << (3 - 1)) | (iMask << (2 - 1)));
 
-        iMask = ~iMask;
-
-        return (iNo & iMask);
+        return (iNo | iMask);
     }
 }
 
@@ -44,7 +41,7 @@ class BitMask
 //
 //////////////////////////////////////////////////////////////////
 
-class program65_1
+class program65_5
 {
 
     public static void main(String A[])
@@ -58,7 +55,7 @@ class program65_1
         System.out.println("Enter the number");
         Value = sobj.nextLong();
 
-        iRet = bobj.OffBit(Value);
+        iRet = bobj.OnBit(Value);
 
         System.out.println("Modified number is : " + iRet);
     }

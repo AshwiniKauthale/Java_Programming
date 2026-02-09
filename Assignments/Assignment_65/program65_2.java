@@ -30,10 +30,9 @@ class BitMask
     {
         int iMask = 1;
 
-        iMask = (iMask << (7 - 1));
+        iMask = ((iMask << (7 - 1)) | (iMask << (10 - 1)));
 
         iMask = ~iMask;
-
         return (iNo & iMask);
     }
 }
@@ -44,7 +43,7 @@ class BitMask
 //
 //////////////////////////////////////////////////////////////////
 
-class program65_1
+class program65_2
 {
 
     public static void main(String A[])
