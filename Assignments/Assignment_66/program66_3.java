@@ -15,40 +15,20 @@ import java.util.*;
 class BitMask
 {
 
-////////////////////////////////////////////////////////////////////
-//
-//  Function Name : ChkBit
-//  Description   : Used to Check Bit is On or Off
-//  Input :         long
-//  Output :        boolean
-//  Author :        Ashwini Vishnu Kauthale
-//  Date :          05/02/2025
-//
-////////////////////////////////////////////////////////////////////
-
-    public boolean ChkBit(long iNo, int iPos)
-    {
-
+    public long OnBit(long iNo, int iPos) {
         if (iPos < 1 || iPos > 32) {
             System.out.println("Invalid Position");
-            return false;
+            return 0;
         }
 
-        boolean bFlag = false;
         int Mask = 1;
         long Result = 0;
 
         Mask = Mask << (iPos - 1);
 
-        Result = iNo & Mask;
+        Result = iNo | Mask;
 
-        if (Result == Mask) {
-            bFlag = true;
-        } else {
-            bFlag = false;
-        }
-
-        return bFlag;
+        return Result;
     }
 }
 
@@ -58,14 +38,13 @@ class BitMask
 //
 //////////////////////////////////////////////////////////////////
 
-class program66_1
+class program66_3
 {
 
-    public static void main(String A[])
-    {
+    public static void main(String A[]) {
         long Value = 0;
         int iPos = 0;
-        boolean bRet = false;
+        long iRet = 0;
 
         BitMask bobj = new BitMask();
 
@@ -77,16 +56,9 @@ class program66_1
         System.out.println("Enter Position");
         iPos = sobj.nextInt();
 
-        bRet = bobj.ChkBit(Value, iPos);
+        iRet = bobj.OnBit(Value, iPos);
 
-        if (bRet = true)
-        {
-            System.out.println("Bit is ON");
-        }
-        else
-        {
-            System.out.println("Bit is OFF");
-        }
+        System.out.println("Modified number is: " + iRet);
     }
 
 }

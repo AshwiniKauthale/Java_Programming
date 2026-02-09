@@ -17,38 +17,25 @@ class BitMask
 
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : ChkBit
-//  Description   : Used to Check Bit is On or Off
+//  Function Name : ToggleBit
+//  Description   : Used to Toggle the given bit
 //  Input :         long
-//  Output :        boolean
+//  Output :        long
 //  Author :        Ashwini Vishnu Kauthale
-//  Date :          05/02/2025
+//  Date :          04/02/2025
 //
 ////////////////////////////////////////////////////////////////////
 
-    public boolean ChkBit(long iNo, int iPos)
+    public long ToggleBit(long iNo)
     {
-
-        if (iPos < 1 || iPos > 32) {
-            System.out.println("Invalid Position");
-            return false;
-        }
-
-        boolean bFlag = false;
         int Mask = 1;
         long Result = 0;
 
-        Mask = Mask << (iPos - 1);
+        Mask = ((Mask << (32 - 1)) | (Mask << (32 - 2)) | (Mask << (32 - 3)) | (Mask << (32 - 4)) | (Mask << (1 - 1)) | (Mask << (2 - 1)) | (Mask << (3 - 1)) | (Mask << (4 - 1)));
 
-        Result = iNo & Mask;
+        Result = iNo ^ Mask;
 
-        if (Result == Mask) {
-            bFlag = true;
-        } else {
-            bFlag = false;
-        }
-
-        return bFlag;
+        return Result;
     }
 }
 
@@ -58,14 +45,13 @@ class BitMask
 //
 //////////////////////////////////////////////////////////////////
 
-class program66_1
+class program66_5
 {
 
     public static void main(String A[])
     {
         long Value = 0;
-        int iPos = 0;
-        boolean bRet = false;
+        long iRet = 0;
 
         BitMask bobj = new BitMask();
 
@@ -74,19 +60,8 @@ class program66_1
         System.out.println("Enter Number");
         Value = sobj.nextLong();
 
-        System.out.println("Enter Position");
-        iPos = sobj.nextInt();
+        iRet = bobj.ToggleBit(Value);
 
-        bRet = bobj.ChkBit(Value, iPos);
-
-        if (bRet = true)
-        {
-            System.out.println("Bit is ON");
-        }
-        else
-        {
-            System.out.println("Bit is OFF");
-        }
+        System.out.println("Modified number is: " + iRet);
     }
-
 }
