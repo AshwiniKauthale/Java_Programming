@@ -17,23 +17,32 @@ class BitMask
 
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CountOne
-//  Description   : Used to count number of ones from the given input number
+//  Function Name : ChkBit
+//  Description   : Used to check Bit is On or Off
 //  Input :         long
-//  Output :        long
+//  Output :        boolean
 //  Author :        Ashwini Vishnu Kauthale
-//  Date :          05/02/2025
+//  Date :          04/02/2025
 //
 ////////////////////////////////////////////////////////////////////
-    public long CountOne(long iNo)
+
+    public boolean ChkBit(long iNo)
     {
-        int iCount = 0;
-        while (iNo != 0) {
-            iNo = iNo & (iNo - 1);
-            iCount++;
+        boolean bFlag = false;
+        int Mask = 1;
+        long Result = 0;
+
+        Mask = ((Mask << (9 - 1)) | (Mask << (12 - 1)));
+
+        Result = iNo | Mask;
+
+        if (Result != 0) {
+            bFlag = true;
+        } else {
+            bFlag = false;
         }
 
-        return iCount;
+        return bFlag;
     }
 }
 
@@ -43,13 +52,13 @@ class BitMask
 //
 //////////////////////////////////////////////////////////////////
 
-class program67_1
+class program67_3
 {
 
     public static void main(String A[])
     {
         long Value = 0;
-        long iRet = 0;
+        boolean bRet = false;
 
         BitMask bobj = new BitMask();
 
@@ -58,9 +67,13 @@ class program67_1
         System.out.println("Enter Number");
         Value = sobj.nextLong();
 
-        iRet = bobj.CountOne(Value);
+        bRet = bobj.ChkBit(Value);
 
-        System.out.println("Number of One's are : " + iRet);
+        if (bRet == true) {
+            System.out.println("Bit is ON");
+        } else {
+            System.out.println("Bit is Off");
+        }
     }
 
 }

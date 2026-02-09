@@ -14,26 +14,27 @@ import java.util.*;
 
 class BitMask
 {
-
 ////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CountOne
-//  Description   : Used to count number of ones from the given input number
-//  Input :         long
-//  Output :        long
+//  Function Name : ToggleBitRange
+//  Description   : Used to toggle bits from the given range
+//  Input :         long,long
+//  Output :        nothing
 //  Author :        Ashwini Vishnu Kauthale
 //  Date :          05/02/2025
 //
 ////////////////////////////////////////////////////////////////////
-    public long CountOne(long iNo)
-    {
-        int iCount = 0;
-        while (iNo != 0) {
-            iNo = iNo & (iNo - 1);
-            iCount++;
-        }
 
-        return iCount;
+    public long ToggleBitRange(long iNo,int iStart,int iEnd)
+    {
+        long iMask = 0;
+        long iResult = 0;
+
+        iMask = ((1L << (iEnd + 1)) - 1) ^ ((1L << iStart) - 1);
+
+        iResult = iNo ^ iMask;
+
+        return iResult;
     }
 }
 
@@ -43,24 +44,32 @@ class BitMask
 //
 //////////////////////////////////////////////////////////////////
 
-class program67_1
+class program67_5
 {
-
     public static void main(String A[])
     {
-        long Value = 0;
-        long iRet = 0;
+        long Value1 = 0,iRet = 0;
+        int Start = 0,End = 0;
 
         BitMask bobj = new BitMask();
 
         Scanner sobj = new Scanner(System.in);
 
-        System.out.println("Enter Number");
-        Value = sobj.nextLong();
+        System.out.println("Enter first Number");
+        Value1 = sobj.nextLong();
 
-        iRet = bobj.CountOne(Value);
+        System.out.println("Enter start position");
+        Start = sobj.nextInt();
 
-        System.out.println("Number of One's are : " + iRet);
+        System.out.println("Enter End Position");
+        End = sobj.nextInt();
+
+        iRet = bobj.ToggleBitRange(Value1,Start,End);
+
+        System.out.println("Toggled value is  :"+ iRet);
+
+        bobj = null;
+        sobj  = null;
     }
 
 }
