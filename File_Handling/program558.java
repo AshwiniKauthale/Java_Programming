@@ -1,11 +1,17 @@
 import java.io.*;
+import java.util.Scanner;
 
-class program557
+class program558
 {
     public static void main(String A[]) throws Exception
     {
+        String FileName = null;
+        Scanner sobj = new Scanner(System.in);
 
-        File fobj = new File("Demo.txt");
+        System.out.println("Enter the name of file");
+        FileName = sobj.nextLine();
+
+        File fobj = new File(FileName);
 
         Boolean bRet = fobj.createNewFile();
 
@@ -18,5 +24,7 @@ class program557
             System.out.println("Unable to cerate File");
 
         }
+
+        sobj.close();
     }
 }
