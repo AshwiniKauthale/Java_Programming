@@ -96,38 +96,35 @@ class Matrix
 
     ////////////////////////////////////////////////////////////////////
     //
-    //  Function Name : Transpose()
-    //  Description   : It Transpose the given matrix
+    //  Function Name : ChkSparse()
+    //  Description   : It check matrix is Sparse matrix or not
     //  Input :         Nothing
-    //  Output :        Nothing
+    //  Output :        Boolean
     //  Author :        Ashwini Vishnu Kauthale
     //  Date :          23/02/2025
     //
     ////////////////////////////////////////////////////////////////////
 
-    public void Transpose()
+    public boolean ChkSparse()
     {
-        int Brr[][] = new int[iCol][iRow];
-        int i = 0,j = 0 ,temp = 0;
+        boolean bFlag = false;
+        int i = 0,j = 0;
+        int iCount = 0;
 
+        bFlag = true;
         for(i = 0; i < iRow; i++)
         {
             for(j = 0; j < iCol; j++)
             {
-                Brr[j][i] = Arr[i][j];
+                if( Arr[i][j] == 0)
+                {
+                    iCount++;
+                }
             }
         }
 
-        System.out.println("Matrix After transpose");
-        for(i = 0; i < iRow; i++)
-        {
-            for(j = 0; j < iCol; j++)
-            {
-                System.out.print(Brr[i][j]+"\t");
-            }
-            System.out.println();
-        }
 
+        return (iCount > ((iRow * iCol) / 2));
     }
 }
 
@@ -137,11 +134,11 @@ class Matrix
 //
 //////////////////////////////////////////////////////////////////
 
-class program73_1
+class program73_5
 {
     public static void main(String A[])
     {
-        int iRet = 0;
+        boolean bRet = false;
         int iValue1 = 0, iValue2 = 0;
         Scanner ssobj = new Scanner(System.in);
 
@@ -157,7 +154,16 @@ class program73_1
 
         mobj.Display();
 
-        mobj.Transpose();
+        bRet = mobj.ChkSparse();
+
+        if(bRet == true)
+        {
+            System.out.println("It is a Sparse matrix");
+        }
+        else
+        {
+            System.out.println("Its not a Sparse matrix");
+        }
 
         mobj = null;
     }

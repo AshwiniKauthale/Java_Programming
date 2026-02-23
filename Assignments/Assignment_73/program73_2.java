@@ -96,8 +96,8 @@ class Matrix
 
     ////////////////////////////////////////////////////////////////////
     //
-    //  Function Name : Transpose()
-    //  Description   : It Transpose the given matrix
+    //  Function Name : ReverseRow()
+    //  Description   : It Reverse the row
     //  Input :         Nothing
     //  Output :        Nothing
     //  Author :        Ashwini Vishnu Kauthale
@@ -105,25 +105,32 @@ class Matrix
     //
     ////////////////////////////////////////////////////////////////////
 
-    public void Transpose()
+    public void ReverseRow()
     {
-        int Brr[][] = new int[iCol][iRow];
-        int i = 0,j = 0 ,temp = 0;
+        int i = 0,j = 0 ,iStart = 0,iEnd = 0, temp = 0;
 
         for(i = 0; i < iRow; i++)
         {
-            for(j = 0; j < iCol; j++)
+            iStart = 0;
+            iEnd = iCol - 1;
+
+            while(iStart < iEnd)
             {
-                Brr[j][i] = Arr[i][j];
+                temp = Arr[i][iStart];
+                Arr[i][iStart] = Arr[i][iEnd];
+                Arr[i][iEnd] = temp;
+
+                iStart++;
+                iEnd--;
             }
         }
 
-        System.out.println("Matrix After transpose");
+        System.out.println("Matrix After Reverse");
         for(i = 0; i < iRow; i++)
         {
             for(j = 0; j < iCol; j++)
             {
-                System.out.print(Brr[i][j]+"\t");
+                System.out.print(Arr[i][j]+"\t");
             }
             System.out.println();
         }
@@ -137,7 +144,7 @@ class Matrix
 //
 //////////////////////////////////////////////////////////////////
 
-class program73_1
+class program73_2
 {
     public static void main(String A[])
     {
@@ -157,7 +164,7 @@ class program73_1
 
         mobj.Display();
 
-        mobj.Transpose();
+        mobj.ReverseRow();
 
         mobj = null;
     }

@@ -49,6 +49,13 @@ class Matrix
 
     public void Accept()
     {
+        if(iRow != iCol)
+        {
+            System.out.println("Invalid Parameter");
+            System.out.println("Number of Rows should be equal to number of Columns");
+            return;
+        }
+
         Scanner sobj = new Scanner(System.in);
         int i = 0 , j = 0;
 
@@ -96,38 +103,34 @@ class Matrix
 
     ////////////////////////////////////////////////////////////////////
     //
-    //  Function Name : Transpose()
-    //  Description   : It Transpose the given matrix
+    //  Function Name : ChkIdentity()
+    //  Description   : It check it is identity matrix or not
     //  Input :         Nothing
-    //  Output :        Nothing
+    //  Output :        Boolean
     //  Author :        Ashwini Vishnu Kauthale
     //  Date :          23/02/2025
     //
     ////////////////////////////////////////////////////////////////////
 
-    public void Transpose()
+    public boolean ChkIdentity()
     {
-        int Brr[][] = new int[iCol][iRow];
-        int i = 0,j = 0 ,temp = 0;
+        boolean bFlag = false;
+        int i = 0,j = 0;
 
+        bFlag = true;
         for(i = 0; i < iRow; i++)
         {
             for(j = 0; j < iCol; j++)
             {
-                Brr[j][i] = Arr[i][j];
+                if(i == j && Arr[i][j] != 1)
+                {
+                    bFlag = false;
+                    break;
+                }
             }
         }
 
-        System.out.println("Matrix After transpose");
-        for(i = 0; i < iRow; i++)
-        {
-            for(j = 0; j < iCol; j++)
-            {
-                System.out.print(Brr[i][j]+"\t");
-            }
-            System.out.println();
-        }
-
+        return bFlag;
     }
 }
 
@@ -137,11 +140,11 @@ class Matrix
 //
 //////////////////////////////////////////////////////////////////
 
-class program73_1
+class program73_4
 {
     public static void main(String A[])
     {
-        int iRet = 0;
+        boolean bRet = false;
         int iValue1 = 0, iValue2 = 0;
         Scanner ssobj = new Scanner(System.in);
 
@@ -157,7 +160,16 @@ class program73_1
 
         mobj.Display();
 
-        mobj.Transpose();
+        bRet = mobj.ChkIdentity();
+
+        if(bRet == true)
+        {
+            System.out.println("It is a identity matrix");
+        }
+        else
+        {
+            System.out.println("Its not a identity matrix");
+        }
 
         mobj = null;
     }
