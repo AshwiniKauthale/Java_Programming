@@ -55,7 +55,6 @@ class Matrix
             System.out.println("Number of Rows should be equal to number of Columns");
             return;
         }
-        
         Scanner sobj = new Scanner(System.in);
         int i = 0 , j = 0;
 
@@ -103,8 +102,8 @@ class Matrix
 
     ////////////////////////////////////////////////////////////////////
     //
-    //  Function Name : AddDiagonal()
-    //  Description   : It is used to get the summation of diagonal element
+    //  Function Name : MaxDiagonal()
+    //  Description   : It is used to display the largest element of the diagonal
     //  Input :         Nothing
     //  Output :        Integer
     //  Author :        Ashwini Vishnu Kauthale
@@ -112,24 +111,27 @@ class Matrix
     //
     ////////////////////////////////////////////////////////////////////
 
-    public int AddDiagonal()
+    public int MaxDiagonal()
     {
-        
-
-        int iSum = 0;
         int i = 0,j = 0;
+        int iMax = 0;
 
+        iMax = Arr[0][0];
         for(i = 0; i < iRow; i++)
         {
             for(j = 0; j<iCol; j++)
             {
-                if(i == j)
+                if((i == j) || (j == (iCol -1 -i)))
                 {
-                    iSum = iSum + Arr[i][j];
+                    if(Arr[i][j] > iMax)
+                    {
+                        iMax = Arr[i][j];
+                    }
                 }
             }
         }
-        return iSum;
+
+        return iMax;
     }
 }
 
@@ -139,7 +141,7 @@ class Matrix
 //
 //////////////////////////////////////////////////////////////////
 
-class program72_1
+class program72_3
 {
     public static void main(String A[])
     {
@@ -159,9 +161,9 @@ class program72_1
 
         mobj.Display();
 
-        iRet = mobj.AddDiagonal();
+        iRet = mobj.MaxDiagonal();
 
-        System.out.println("Summation of diagonal elementa are : "+ iRet);
+        System.out.println("Maximum is : "+ iRet);
 
         mobj = null;
     }

@@ -55,7 +55,6 @@ class Matrix
             System.out.println("Number of Rows should be equal to number of Columns");
             return;
         }
-        
         Scanner sobj = new Scanner(System.in);
         int i = 0 , j = 0;
 
@@ -103,33 +102,39 @@ class Matrix
 
     ////////////////////////////////////////////////////////////////////
     //
-    //  Function Name : AddDiagonal()
-    //  Description   : It is used to get the summation of diagonal element
+    //  Function Name : SwapRows()
+    //  Description   : It swap the content of consecutive rows
     //  Input :         Nothing
-    //  Output :        Integer
+    //  Output :        Nothing
     //  Author :        Ashwini Vishnu Kauthale
     //  Date :          23/02/2025
     //
     ////////////////////////////////////////////////////////////////////
 
-    public int AddDiagonal()
+    public void SwapRows()
     {
-        
+        int i = 0,j = 0 ,temp = 0;
 
-        int iSum = 0;
-        int i = 0,j = 0;
-
-        for(i = 0; i < iRow; i++)
+        for(i = 0; i < iRow - 1; i = i + 2)
         {
-            for(j = 0; j<iCol; j++)
+            for(j = 0; j < iCol; j++)
             {
-                if(i == j)
-                {
-                    iSum = iSum + Arr[i][j];
-                }
+                temp = Arr[i][j];
+                Arr[i][j] = Arr[i + 1][j];
+                Arr[i + 1][j] = temp;
             }
         }
-        return iSum;
+
+        System.out.println("Array after swap");
+        for(i = 0; i < iRow; i++)
+        {
+            for(j = 0; j < iCol; j++)
+            {
+                System.out.print(Arr[i][j]+"\t");
+            }
+            System.out.println();
+        }
+
     }
 }
 
@@ -139,7 +144,7 @@ class Matrix
 //
 //////////////////////////////////////////////////////////////////
 
-class program72_1
+class program72_5
 {
     public static void main(String A[])
     {
@@ -159,9 +164,7 @@ class program72_1
 
         mobj.Display();
 
-        iRet = mobj.AddDiagonal();
-
-        System.out.println("Summation of diagonal elementa are : "+ iRet);
+        mobj.SwapRows();
 
         mobj = null;
     }

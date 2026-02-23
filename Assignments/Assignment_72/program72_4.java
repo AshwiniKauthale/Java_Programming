@@ -55,7 +55,6 @@ class Matrix
             System.out.println("Number of Rows should be equal to number of Columns");
             return;
         }
-        
         Scanner sobj = new Scanner(System.in);
         int i = 0 , j = 0;
 
@@ -103,32 +102,31 @@ class Matrix
 
     ////////////////////////////////////////////////////////////////////
     //
-    //  Function Name : AddDiagonal()
-    //  Description   : It is used to get the summation of diagonal element
+    //  Function Name : AddColumn()
+    //  Description   : It is used to display the summation of column
     //  Input :         Nothing
-    //  Output :        Integer
+    //  Output :        Display Summation of Column
     //  Author :        Ashwini Vishnu Kauthale
     //  Date :          23/02/2025
     //
     ////////////////////////////////////////////////////////////////////
 
-    public int AddDiagonal()
+    public int AddColumn()
     {
-        
-
-        int iSum = 0;
         int i = 0,j = 0;
+        int iSum = 0;
 
-        for(i = 0; i < iRow; i++)
+        for(j = 0; j < iRow; j++)
         {
-            for(j = 0; j<iCol; j++)
+            iSum = 0;
+            for(i = 0; i<iCol; i++)
             {
-                if(i == j)
-                {
-                    iSum = iSum + Arr[i][j];
-                }
+                iSum = iSum + Arr[i][j];
             }
+
+            System.out.print(iSum +"\t");
         }
+
         return iSum;
     }
 }
@@ -139,7 +137,7 @@ class Matrix
 //
 //////////////////////////////////////////////////////////////////
 
-class program72_1
+class program72_4
 {
     public static void main(String A[])
     {
@@ -159,9 +157,7 @@ class program72_1
 
         mobj.Display();
 
-        iRet = mobj.AddDiagonal();
-
-        System.out.println("Summation of diagonal elementa are : "+ iRet);
+        mobj.AddColumn();
 
         mobj = null;
     }
